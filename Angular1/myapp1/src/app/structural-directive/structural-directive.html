@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="header">
+    <h2>Header Component</h2>
+    <hr />
+  </div>
+  <div *ngIf="status" class="content">
+    <h2>This is an example for the Structural Directives</h2>
+  </div>
+  <div class="test1">
+    <div class="test" *ngIf="status1; then template1; else template2">
+      <h4>Section-ngif</h4>
+    </div>
+    <ng-template #template1>
+      <h2>Section-1</h2>
+    </ng-template>
+
+    <ng-template #template2>
+      <h2>Section-2</h2>
+    </ng-template>
+  </div>
+  <div class="switchcontainer">
+    <div [ngSwitch]="countryName">
+      <p *ngSwitchCase="'India'">Selected country is India</p>
+      <p *ngSwitchDefault>Country not found</p>
+    </div>
+  </div>
+  <div class="countriesContainer">
+    <hr />
+    <div style="margin-left: 400px">
+      <h3>ALL THE COUNTRIES</h3>
+      <ul type="circle" *ngFor="let country of countryNames">
+        <!-- <li>{{countryNames[0]}}</li>
+         <li>{{countryNames[1]}}</li>
+         <li></li>
+         <li></li> -->
+        <li>{{ country }}</li>
+      </ul>
+    </div>
+    <hr />
+  </div>
+
+  <div class="countriesContainer">
+    <select class="selectCountry" [(ngModel)]="country">
+      
+        <option value=""></option>
+        <option value="India">INDIA</option>
+        <option value="Usa">USA</option>
+        <option value="China">AMERICA_CHINA</option>
+      <hr/>
+    </select>
+    <div class="details" [ngSwitch]="country">
+      <p *ngSwitchCase="'India'">
+          DETAILS ABOUT THE INDIA
+      </p>
+      <p *ngSwitchCase="'Usa'">
+          DETAILS ABOUT THE USA
+      </p>
+      <p *ngSwitchCase="'China'">
+          DETAILS ABOUT THE CHINA
+      </p>
+      <p *ngSwitchDefault="">
+        PLEASE SELECT COUNTRY
+      </p>
+
+    </div>
+    <div class="productsContainer">
+      <div class="products">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"> Id</th>
+      <th scope="col">Product Id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Picture</th>
+      <th scope="col">Product Price</th>
+      <th colspan="3">ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products,index as i" 
+    [ngStyle]="{'background-color': i % 2 == 0 ? '#fff9c4' : '#ffcdd2'}">
+     <td>{{i+1}}</td>
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td><img src="{{product.image}}" alt=""></td>
+      <td>{{product.price}}</td>
+      <td><button class="btn btn-primary" (click)="Add(product)">Add</button></td>
+      <td><button class="btn btn-danger" (click)="Del(product)">Delete</button></td>
+    </tr>
+    <button type="button" class="btn btn-primary" (click)="Asc()">Ascending</button>
+<button type="button" class="btn btn-secondary" (click)="Des()">Desending</button>
+
+   
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+<hr style="color: blue;"/>
+  <div class="footer" style="text-align: center">
+    <h4>copywrite-2023</h4>
+  </div>
+</div>

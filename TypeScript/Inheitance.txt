@@ -1,0 +1,3 @@
+Acquiring the properties from parent class to the child class is called Inhetiance,
+1.Single Inheritance
+

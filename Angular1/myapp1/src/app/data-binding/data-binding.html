@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="headerpart">
+<h2 style="color: green;">Welcome to the Interpolation</h2>
+<hr color="red"/>
+  </div>
+  <div class="contentpart">
+  <h2>URL:{{url}}</h2>
+    FirstName:{{firstName}}<br/>
+    LastName:{{lastName}}<br/>
+    Age:{{age}}<br/>
+    image:{{pathofImage}}
+
+    <img [src]="pathofImage" alt="Still Loading"><br/>
+    <button  class="btn btn-success" (click)="action1()">Click Here</button>
+  </div>
+     FirstName <input type="text" [(ngModel)]="firstName">
+     LastName <input type="text" [(ngModel)]="lastName">
+     <input type="button" value="ChangeData" (click)="action2()"/>
+  <hr color="red"/>
+ 
+
+
+
+  <div class="footerpart">
+      Copywrite-2023
+  </div>
+</div>

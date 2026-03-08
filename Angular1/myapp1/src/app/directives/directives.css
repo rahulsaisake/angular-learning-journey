@@ -1,0 +1,13 @@
+.container{
+  text-align: center;
+}
+.classA{
+  color: red;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+}
+.classB{
+  color: springgreen;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 60px;
+}

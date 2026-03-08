@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="header">
+<h3 style="color: green;"> This is the header part</h3>
+<hr class="redLine"/>
+  </div>
+  <div class="content">
+    <div class="myform">
+      <input type="text" name="item" placeholder="Enter the item" #item>
+      <button class="btn btn-primary" (click)="addItem(item)">Add Item</button>
+      <hr style="border: 2px solid rgb(15, 188, 201);"/>
+    </div>
+    <table class="items">
+      <thead>
+        <tr>
+          
+          <th>ITEM_NAME</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let it of items">
+        <tr>
+          <th>{{it.item}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
